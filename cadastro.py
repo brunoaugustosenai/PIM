@@ -2,7 +2,7 @@ import json
 import os
 
 def boas_vindas():
-    print("\n" + "*" * 51)
+    print("\n" + "*" * 50)
     print("*" + " " * 48 + "*")
     print("*" + " " * 14 + "SEJA BEM-VINDO(A)!" + " " * 16 + "*")
     print("*" + " " * 48 + "*")
