@@ -19,7 +19,6 @@ def carregar_dados():
         try:
             return json.load(file)
         except json.JSONDecodeError:
-            # Se o arquivo estiver vazio ou corrompido, retornamos dicionário vazio
             return {}
 
 def salvar_dados(dados):
