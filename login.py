@@ -2,7 +2,7 @@ import json
 import getpass
 import os
 import webbrowser
-def boas_vindas():
+def menu_login():
     print("\n" + "*" * 50)
     print("*" + " " * 48 + "*")
     print("*" + " " * 14 + "Faça seu Login!" + " " * 19 + "*")
@@ -34,7 +34,7 @@ def login():
     else:
         print("❌ Email ou senha incorretos.")
         return
-def menu():
+def menu_materia():
     while True:
         print('\n****************************')
         print('--- Bem-vindo ao nosso sistema de educação inclusivo ---')
@@ -67,6 +67,6 @@ def log_py():
 
 
 if __name__ == "__main__":
-    boas_vindas()
+    menu_login()
     login()
-    menu()
+    menu_materia()
