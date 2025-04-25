@@ -1,6 +1,7 @@
 import json
 import getpass
 import os
+import webbrowser
 def boas_vindas():
     print("\n" + "*" * 50)
     print("*" + " " * 48 + "*")
@@ -33,7 +34,39 @@ def login():
     else:
         print("❌ Email ou senha incorretos.")
         return
+def menu():
+    while True:
+        print('\n****************************')
+        print('--- Bem-vindo ao nosso sistema de educação inclusivo ---')
+        print('1. Lógica de Programação em Python')
+        print('2. Cibersegurança')
+        print('3. Banco de Dados')
+        print('4. Matemática')
+        print('5. Sair')
+        print('****************************')
+
+        opcao = input('Escolha uma opção: ').strip()
+
+        if opcao == '1':
+            log_py()
+        elif opcao == '2':
+            print("Conteúdo de Cibersegurança em construção...")
+        elif opcao == '3':
+            print("Conteúdo de Banco de Dados em construção...")
+        elif opcao == '4':
+            print("Conteúdo de Matemática em construção...")
+        elif opcao == '5':
+            print('Saindo...')
+            break
+        else:
+            print('Opção inválida!')
+def log_py():
+    print("Você escolheu Lógica de Programação em Python.")
+    print("Abrindo conteúdo no navegador...")
+    webbrowser.open("https://www.letras.mus.br/guns-n-roses/88835/")
+
 
 if __name__ == "__main__":
     boas_vindas()
     login()
+    menu()
