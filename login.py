@@ -2,6 +2,16 @@ import json
 import getpass
 import os
 import webbrowser
+import pyttsx3
+
+deficiencia_usuario_logado = None  # Armazena a deficiência do usuário logado
+
+def falar(texto):
+    if deficiencia_usuario_logado and deficiencia_usuario_logado == "auditiva":
+        engine = pyttsx3.init()
+        engine.say(texto)
+        engine.runAndWait()
+
 def menu_login():
     print("\n" + "*" * 50)
     print("*" + " " * 48 + "*")
@@ -19,6 +29,7 @@ def carregar_dados():
             return {}
 
 def login():
+    global deficiencia_usuario_logado
     dados = carregar_dados()
     print('\n')
     print("_" * 50)
@@ -30,41 +41,76 @@ def login():
     if email in dados and dados[email]["senha"] == senha:
         print("✅ Login bem-sucedido!")
         print(f"Bem-vindo(a), {dados[email]['usuario']}!")
-        print(f"Deficiência informada: {dados[email]['deficiencia']}")
+        deficiencia_usuario_logado = dados[email]['deficiencia'].lower()
+        print(f"Deficiência informada: {deficiencia_usuario_logado}")
+
+        falar(f"Login realizado com sucesso. Bem-vindo ou bem-vinda, {dados[email]['usuario']}")
     else:
         print("❌ Email ou senha incorretos.")
         return
+
 def menu_materia():
     while True:
-        print('\n****************************')
-        print('--- Bem-vindo ao nosso sistema de educação inclusivo ---')
-        print('1. Lógica de Programação em Python')
-        print('2. Cibersegurança')
-        print('3. Banco de Dados')
-        print('4. Matemática')
-        print('5. Sair')
-        print('****************************')
+        print("*" * 50)
+        texto_menu = (
+            "--- Bem-vindo ao nosso sistema de educação inclusivo ---\n"
+            "1. Lógica de Programação em Python\n"
+            "2. Cibersegurança\n"
+            "3. Tecnologia Da Informação\n"
+            "4. Matemática e suas Tecnologias\n"
+            "5. Sair"
+        )
+        print(texto_menu)
+        print("*" * 50)
+
+        falar("Escolha uma das matérias disponíveis: "
+              "1 - Lógica de Programação em Python, "
+              "2 - Cibersegurança, "
+              "3 - Tecnologia da Informação, "
+              "4 - Matemática e suas Tecnologias, "
+              "ou 5 para sair.")
 
         opcao = input('Escolha uma opção: ').strip()
 
         if opcao == '1':
             log_py()
         elif opcao == '2':
-            print("Conteúdo de Cibersegurança em construção...")
+            cibersegurança()
         elif opcao == '3':
-            print("Conteúdo de Banco de Dados em construção...")
+            TI()
         elif opcao == '4':
-            print("Conteúdo de Matemática em construção...")
+            matematica()
         elif opcao == '5':
+            falar("Saindo do sistema. Até a próxima!")
             print('Saindo...')
             break
         else:
             print('Opção inválida!')
-def log_py():
-    print("Você escolheu Lógica de Programação em Python.")
-    print("Abrindo conteúdo no navegador...")
-    webbrowser.open("https://www.letras.mus.br/guns-n-roses/88835/")
+            falar("Opção inválida. Tente novamente.")
 
+def log_py():
+    texto = "Você escolheu Lógica de Programação em Python. Abrindo conteúdo no navegador..."
+    print(texto)
+    falar(texto)
+    webbrowser.open("https://www.youtube.com/watch?v=zRIbf6JqkNc")
+
+def cibersegurança():
+    texto = "Você escolheu Cibersegurança. Abrindo conteúdo no navegador..."
+    print(texto)
+    falar(texto)
+    webbrowser.open("https://www.youtube.com/watch?v=zRIbf6JqkNc")
+
+def TI():
+    texto = "Você escolheu Tecnologia da Informação. Abrindo conteúdo no navegador..."
+    print(texto)
+    falar(texto)
+    webbrowser.open("https://www.youtube.com/watch?v=zRIbf6JqkNc")
+
+def matematica():
+    texto = "Você escolheu Matemática e suas Tecnologias. Abrindo conteúdo no navegador..."
+    print(texto)
+    falar(texto)
+    webbrowser.open("https://www.youtube.com/watch?v=zRIbf6JqkNc")
 
 if __name__ == "__main__":
     menu_login()
