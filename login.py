@@ -4,7 +4,7 @@ import os
 import webbrowser
 import pyttsx3
 
-deficiencia_usuario_logado = None  # Armazena a deficiência do usuário logado
+deficiencia_usuario_logado = None  
 
 def falar(texto):
     if deficiencia_usuario_logado and deficiencia_usuario_logado == "auditiva":
@@ -92,25 +92,25 @@ def log_py():
     texto = "Você escolheu Lógica de Programação em Python. Abrindo conteúdo no navegador..."
     print(texto)
     falar(texto)
-    webbrowser.open("https://www.youtube.com/watch?v=zRIbf6JqkNc")
+    webbrowser.open("https://youtu.be/jBIPvXHRYpg?si=l74A98RrbQviakKk")
 
 def cibersegurança():
     texto = "Você escolheu Cibersegurança. Abrindo conteúdo no navegador..."
     print(texto)
     falar(texto)
-    webbrowser.open("https://www.youtube.com/watch?v=zRIbf6JqkNc")
+    webbrowser.open("https://youtu.be/KvPtIl-Gz2E?si=zgi65JPjRt-wxg3a")
 
 def TI():
     texto = "Você escolheu Tecnologia da Informação. Abrindo conteúdo no navegador..."
     print(texto)
     falar(texto)
-    webbrowser.open("https://www.youtube.com/watch?v=zRIbf6JqkNc")
+    webbrowser.open("https://youtu.be/-g1XrbcRC54?si=IOgvQ0G8ofnTGZQO")
 
 def matematica():
     texto = "Você escolheu Matemática e suas Tecnologias. Abrindo conteúdo no navegador..."
     print(texto)
     falar(texto)
-    webbrowser.open("https://www.youtube.com/watch?v=zRIbf6JqkNc")
+    webbrowser.open("https://www.youtube.com/watch?v=eioW24KwR00&list=PLr8_lF5KXtXoIe2f4JaxSAGRnNEilTtkp")
 
 if __name__ == "__main__":
     menu_login()
