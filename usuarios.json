@@ -6,12 +6,17 @@
     },
     "lindo@gmail.com": {
         "usuario": "lindinho123",
-        "deficiencia": "auditiva",
+        "deficiencia": "Cego",
         "senha": "linde"
     },
     "leozinho_do_grau@gmail.com": {
         "usuario": "leo-grau",
         "deficiencia": "TDAH",
         "senha": "grau123"
+    },
+    "hun_90@gmail.com": {
+        "usuario": "hung90",
+        "deficiencia": "cego",
+        "senha": "1234"
     }
 }

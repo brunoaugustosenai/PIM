@@ -7,7 +7,7 @@ import pyttsx3
 deficiencia_usuario_logado = None  
 
 def falar(texto):
-    if deficiencia_usuario_logado and deficiencia_usuario_logado == "auditiva":
+    if deficiencia_usuario_logado and deficiencia_usuario_logado == "cega" or "cego":
         engine = pyttsx3.init()
         engine.say(texto)
         engine.runAndWait()
