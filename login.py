@@ -7,17 +7,22 @@ import pyttsx3
 deficiencia_usuario_logado = None  
 
 def falar(texto):
-    if deficiencia_usuario_logado and deficiencia_usuario_logado == "cega" or "cego":
+    if deficiencia_usuario_logado and deficiencia_usuario_logado == "Visual" or "Intelectual":
         engine = pyttsx3.init()
         engine.say(texto)
         engine.runAndWait()
 
 def menu_login():
-    print("\n" + "*" * 50)
+    print("" + "*" * 50)
     print("*" + " " * 48 + "*")
-    print("*" + " " * 14 + "Faça seu Login!" + " " * 19 + "*")
+    print("*" + " " * 14 + "SEJA BEM-VINDO(A)!" + " " * 16 + "*")
+    print("*" + " " * 14 + "Faça seu Login!" +" " * 19 + "*")
     print("*" + " " * 48 + "*")
     print("*" * 50)
+    print()
+    print("🔐 Sistema de Login e Cadastro de Usuários 🔐")
+    print("🧠 Desenvolvido com Python 🧠 ")
+    print("\n" + "-" * 50 + "\n")
 
 def carregar_dados():
     if not os.path.exists('usuarios.json'):
@@ -28,26 +33,30 @@ def carregar_dados():
         except json.JSONDecodeError:
             return {}
 
+
 def login():
     global deficiencia_usuario_logado
     dados = carregar_dados()
     print('\n')
     print("_" * 50)
-    email = input("Email: ")
+    usuario = input("Nome de usuário: ").strip().lower()
     print("*" * 50)
     senha = getpass.getpass("Senha: ")
     print("*" * 50)
 
-    if email in dados and dados[email]["senha"] == senha:
-        print("✅ Login bem-sucedido!")
-        print(f"Bem-vindo(a), {dados[email]['usuario']}!")
-        deficiencia_usuario_logado = dados[email]['deficiencia'].lower()
-        print(f"Deficiência informada: {deficiencia_usuario_logado}")
+    for email, info in dados.items():
+        if  info["usuario"] == usuario and info["senha"] == senha:
+            print("✅ Login bem-sucedido!")
+            print(f"Bem-vindo(a), {usuario}!")
+            deficiencia_usuario_logado = info['deficiencia'].lower()
+            print(f"Deficiência informada: {deficiencia_usuario_logado}")
 
-        falar(f"Login realizado com sucesso. Bem-vindo ou bem-vinda, {dados[email]['usuario']}")
-    else:
-        print("❌ Email ou senha incorretos.")
-        return
+            falar(f"Login realizado com sucesso. Bem-vindo ou bem-vinda, {usuario}")
+            return
+
+    print("❌ Nome de usuário ou senha incorretos.")
+    return
+
 
 def menu_materia():
     while True:
