@@ -7,8 +7,9 @@ import pyttsx3
 deficiencia_usuario_logado = None  
 
 def falar(texto):
-    if deficiencia_usuario_logado and deficiencia_usuario_logado == "Visual" or "Intelectual":
-        engine = pyttsx3.init()
+    if deficiencia_usuario_logado not in ["nenhuma", "auditiva"]:
+        engine = pyttsx3.init('sapi5')
+        engine.setProperty('volume', 1.0)
         engine.say(texto)
         engine.runAndWait()
 
