@@ -25,10 +25,9 @@ def salvar_dados(dados):
     with open('usuarios.json', 'w') as file:
         json.dump(dados, file, indent=4)
 
-def cadastrar_email(dados):
+def cadastrar_email():
     while True:
         email = input("Digite seu email: ").strip().lower()
-        # Verifica se o email já está cadastrado em algum usuário
         if any(user.get("Email") == email for user in dados.values()):
             print("Email já existe!")
         else:
@@ -80,11 +79,12 @@ if __name__ == "__main__":
     dados = carregar_dados()
 
     nome = cadastrar_usuario(dados)
-    email = cadastrar_email(dados)
+    email = cadastrar_email()
     deficiencia = cadastrar_deficiencia()
     senha = cadastrar_senha()
 
     dados[nome] = {
+        "Usuario": nome,
         "Email": email,
         "Deficiência": deficiencia,
         "Senha": senha

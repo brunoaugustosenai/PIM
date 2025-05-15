@@ -1,37 +1,8 @@
 {
-    "bruno.alves96@aluno.unip.br": {
-        "usuario": "bruno_admin",
-        "deficiencia": "Nenhuma",
-        "senha": "1234"
-    },
-    "leonario.silva@aluno.unip.br": {
-        "usuario": "leonario_admin",
-        "deficiencia": "Nenhuma",
-        "senha": "1234"
-    },
-    "adrian.oliveira6@aluno.unip.br": {
-        "usuario": "adrian_admin",
-        "deficiencia": "Auditivo",
-        "senha": "1234"
-    },
-    "otavio.nascim@aluno.unip.br": {
-        "usuario": "otavio_admin",
-        "deficiencia": "Visual",
-        "senha": "1234"
-    },
-    "vinicius.rodrigues83@aluno.unip.br": {
-        "usuario": "vini_admin",
-        "deficiencia": "Intelectual",
-        "senha": "1234"
-    },
-    "netanza.matanza34@aluno.unip.br": {
-        "usuario": "neto_admin",
-        "deficiencia": "Autismo",
-        "senha": "1234"
-    },
     "teste": {
-        "Email": "teste.teste123@gmail.com",
-        "Defici\u00eancia": "Nenhuma",
-        "Senha": "12345"
+        "Usuario": "teste",
+        "Email": "teste",
+        "Defici\u00eancia": "Visual",
+        "Senha": "1234"
     }
 }

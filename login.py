@@ -46,10 +46,10 @@ def login():
     print("*" * 50)
 
     for email, info in dados.items():
-        if  info["usuario"] == usuario and info["senha"] == senha:
+        if  info["Usuario"] == usuario and info["Senha"] == senha:
             print("✅ Login bem-sucedido!")
             print(f"Bem-vindo(a), {usuario}!")
-            deficiencia_usuario_logado = info['deficiencia'].lower()
+            deficiencia_usuario_logado = info['Defici\u00eancia'].lower()
             print(f"Deficiência informada: {deficiencia_usuario_logado}")
 
             falar(f"Login realizado com sucesso. Bem-vindo ou bem-vinda, {usuario}")
