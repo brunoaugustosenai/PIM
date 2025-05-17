@@ -86,7 +86,7 @@ if __name__ == "__main__":
     dados[nome] = {
         "Usuario": nome,
         "Email": email,
-        "Deficiência": deficiencia,
+        "Deficiencia": deficiencia,
         "Senha": senha
     }
 

@@ -33,8 +33,7 @@ def carregar_dados():
             return json.load(file)
         except json.JSONDecodeError:
             return {}
-
-
+        
 def login():
     global deficiencia_usuario_logado
     dados = carregar_dados()
@@ -49,7 +48,7 @@ def login():
         if  info["Usuario"] == usuario and info["Senha"] == senha:
             print("✅ Login bem-sucedido!")
             print(f"Bem-vindo(a), {usuario}!")
-            deficiencia_usuario_logado = info['Defici\u00eancia'].lower()
+            deficiencia_usuario_logado = info['Deficiencia'].lower()
             print(f"Deficiência informada: {deficiencia_usuario_logado}")
 
             falar(f"Login realizado com sucesso. Bem-vindo ou bem-vinda, {usuario}")
