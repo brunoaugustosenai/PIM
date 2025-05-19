@@ -57,7 +57,6 @@ def login():
     print("❌ Nome de usuário ou senha incorretos.")
     return
 
-
 def menu_materia():
     while True:
         print("*" * 50)
