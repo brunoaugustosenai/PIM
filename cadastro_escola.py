@@ -15,20 +15,39 @@ def boas_vindas():
 def carregar_dados():
     if not os.path.exists('usuarios.json'):
         return {}
-    with open('usuarios.json', 'r') as file:
+    with open('usuarios.json', 'r', encoding='utf-8') as file:
         try:
             return json.load(file)
         except json.JSONDecodeError:
             return {}
 
 def salvar_dados(dados):
-    with open('usuarios.json', 'w') as file:
-        json.dump(dados, file, indent=4)
+    usuarios = {}
+    com_deficiencia = 0
+    sem_deficiencia = 0
+
+    for nome, info in dados.items():
+        if not isinstance(info, dict):
+            continue
+
+        deficiencia = info.get("Deficiencia", "").lower()
+        if deficiencia == "nenhuma":
+            sem_deficiencia += 1
+        else:
+            com_deficiencia += 1
+
+        usuarios[nome] = info
+
+    usuarios["total_com_deficiencia"] = com_deficiencia
+    usuarios["total_sem_deficiencia"] = sem_deficiencia
+
+    with open('usuarios.json', 'w', encoding='utf-8') as file:
+        json.dump(usuarios, file, indent=4, ensure_ascii=False)
 
 def cadastrar_email():
     while True:
         email = input("Digite seu email: ").strip().lower()
-        if any(user.get("Email") == email for user in dados.values()):
+        if any(isinstance(user, dict) and user.get("Email") == email for user in dados.values()):
             print("Email já existe!")
         else:
             return email

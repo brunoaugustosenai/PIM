@@ -1,14 +1,16 @@
 {
     "bruno_admin": {
         "Usuario": "bruno_admin",
-        "Email": "bruno.alves96@@aluno.unip.br",
+        "Email": "bruno.alves96@aluno.unip.br",
         "Deficiencia": "Nenhuma",
         "Senha": "1234"
     },
-    "vini_admin": {
-        "Usuario": "vini_admin",
-        "Email": "vini.rod345@aluno.unip.br",
-        "Deficiencia": "Intelectual",
-        "Senha": "12345"
-    }
+    "bruno_unip": {
+        "Usuario": "bruno_unip",
+        "Email": "bruno@aluno.unip.br",
+        "Deficiencia": "Visual",
+        "Senha": "1234"
+    },
+    "total_com_deficiencia": 2,
+    "total_sem_deficiencia": 1
 }
