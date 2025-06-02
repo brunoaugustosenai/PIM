@@ -100,25 +100,25 @@ def log_py():
     texto = "Você escolheu Lógica de Programação em Python. Abrindo conteúdo no navegador..."
     print(texto)
     falar(texto)
-    webbrowser.open("https://youtu.be/jBIPvXHRYpg?si=l74A98RrbQviakKk")
+    webbrowser.open("https://www.youtube.com/watch?v=2ezrkBvGdtg&list=PLQpSyz5rZmJpFVb1TidOflNMcVnpDdzAn")
 
 def cibersegurança():
     texto = "Você escolheu Cibersegurança. Abrindo conteúdo no navegador..."
     print(texto)
     falar(texto)
-    webbrowser.open("https://youtu.be/KvPtIl-Gz2E?si=zgi65JPjRt-wxg3a")
+    webbrowser.open("https://www.youtube.com/watch?v=GX_XsdNv1PY")
 
 def TI():
     texto = "Você escolheu Tecnologia da Informação. Abrindo conteúdo no navegador..."
     print(texto)
     falar(texto)
-    webbrowser.open("https://youtu.be/-g1XrbcRC54?si=IOgvQ0G8ofnTGZQO")
+    webbrowser.open("https://www.youtube.com/watch?v=TM6ezL7VKck")
 
 def matematica():
     texto = "Você escolheu Matemática e suas Tecnologias. Abrindo conteúdo no navegador..."
     print(texto)
     falar(texto)
-    webbrowser.open("https://www.youtube.com/watch?v=eioW24KwR00&list=PLr8_lF5KXtXoIe2f4JaxSAGRnNEilTtkp")
+    webbrowser.open("https://www.youtube.com/watch?v=tuzbYoeum7E")
 
 if __name__ == "__main__":
     menu_login()
